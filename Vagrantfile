@@ -2,9 +2,9 @@ Vagrant.configure("2") do |config|
   config.vm.box = "dummy"
 
   config.vm.provider :aws do |aws, override|
-    aws.access_key_id = "AKIAJQF4KMBMSZCNGULQ"
-    aws.secret_access_key = "8JelsmMGJHrbWEO6WFhREU2mRcF/yjMOg8tj1TBl"
-    aws.keypair_name = "sergio-key"
+    aws.access_key_id = ENV['AWS_KEY']
+    aws.secret_access_key = ENV['AWS_SECRET']
+    aws.keypair_name = ENV['AWS_KEYNAME']
     aws.region = "us-east-1"
     aws.ami = "ami-d90d92ce"
     aws.instance_type = "t2.micro"
